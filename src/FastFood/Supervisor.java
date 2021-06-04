@@ -35,6 +35,6 @@ public class Supervisor extends Employee {
     }
 
     public String toString() {
-        return "SUPERVISOR: \n" + getFirstName() + " " + getLastName() +"\nEmployee Number: " + getEmployeeNumber() + "\nAmount Earned to date: " + getAmountEarnedTD();
+        return "SUPERVISOR: \n" + getFirstName() + " " + getLastName() +"\nEmployee Number: " + getEmployeeNumber();
     }
 }

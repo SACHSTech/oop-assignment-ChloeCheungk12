@@ -9,8 +9,6 @@ public class Fastfood_Restaurant {
     private Owner owner;
     private ArrayList<Employee> employees;
     public static int employeeCount = 0; 
-    //private int employeeNum;
-    //private Double hWorked;
 
 
     public Fastfood_Restaurant(String rname, Owner theowner) {
@@ -61,20 +59,21 @@ public class Fastfood_Restaurant {
 
     public void payEmployees() {
         for(int i = 0; i < employeeCount; i++) {
-            System.out.println((employees.get(i).getFirstName()) + (employees.get(i).getLastName()));
+            System.out.println(("\n" + employees.get(i).getFirstName()) + " " + (employees.get(i).getLastName()));
             System.out.println("Employee Number: " + (employees.get(i).getEmployeeNumber()));
-            System.out.println("Amount Paid for this Pay Period: " + employees.get(i).getAmountPaid());
+            System.out.println("Amount Paid for this Pay Period: $" + employees.get(i).getAmountPaid());
             employees.get(i).collectPaycheque();
         }
 
-        System.out.println("\nYour (owner) paycheque amount: " + owner.getAmountPaid());
+        System.out.println(("\n" + owner.getFirstName()) + " " + (owner.getLastName()));
+        System.out.println("Amount Paid for this Pay Period: " + owner.getAmountPaid());
 
     }
 
 
 
     public String toString() {
-        return this.getRestaurantName() + "\nOwned by: " + owner.toString() + "\nEmploys " + employees.size() + " employees"; 
+        return this.getRestaurantName() + "\nOwned by: " + owner.getFirstName() + " " + owner.getLastName() + "\nEmploys " + employees.size() + " employees"; 
     }
 
 
