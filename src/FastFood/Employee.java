@@ -4,9 +4,9 @@ public abstract class Employee extends Person{
     
     // Instance Variable
     private int employeeNumber;
-    public double amountEarnedTD;
 
-    public Employee(String fname, String lname, String emailAddr, int phoneNum, int employeeNum) {
+
+    public Employee(String fname, String lname, String emailAddr, String phoneNum, int employeeNum) {
         super(fname, lname, emailAddr, phoneNum);
         this.employeeNumber = employeeNum;
     }
@@ -15,7 +15,12 @@ public abstract class Employee extends Person{
         return employeeNumber;
     }
 
-    public abstract void collectPaycheque(boolean isPayDay);
+
+
+
+    public abstract void collectPaycheque();
+
+    public abstract Double getAmountPaid();
 
 
 

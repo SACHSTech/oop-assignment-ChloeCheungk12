@@ -4,8 +4,8 @@ public class Team_Member extends Employee {
     private Double biweeklyHoursWorked;
     private Double hourlyWage;
 
-    public Team_Member(String fname, String lname, String emailAddr, int phonenum, int employeeNum, String jobPos, Double hWage) {
-        super(fname, lname, emailAddr, phonenum, employeeNum);
+    public Team_Member(String fname, String lname, String emailAddr, String phoneNum, int employeeNum, String jobPos, Double hWage) {
+        super(fname, lname, emailAddr, phoneNum, employeeNum);
         this.hourlyWage = hWage;
         this.jobPosition = jobPos;
         this.biweeklyHoursWorked = 0.0;
@@ -19,18 +19,19 @@ public class Team_Member extends Employee {
     public Double getBiweeklyHoursWorked() {
         return biweeklyHoursWorked;
     }
+    
 
     public String getJobPos() {
         return jobPosition;
     }
 
-    public String setHourlyWage(Double newHourlyWage) {
+    public void setHourlyWage(Double newHourlyWage) {
         if (newHourlyWage < 14.25) {
-            return ("Cannot be below minimum wage.");
+            System.out.println("Cannot be below minimum wage.");
         }
         else {
             this.hourlyWage = newHourlyWage;
-            return ("Hourly wage changed to " + this.hourlyWage);
+            System.out.println("Hourly wage changed to " + this.hourlyWage);
         }
     }
 
@@ -39,14 +40,21 @@ public class Team_Member extends Employee {
     }
 
 
-    public void collectPaycheque(boolean isPayDay) {
-        if (isPayDay == true) {
-            setAmountEarnedTD(this.biweeklyHoursWorked * this.hourlyWage);
-            this.biweeklyHoursWorked = 0.0;
-        }
-        
+    public void collectPaycheque() {
+        setAmountEarnedTD(this.biweeklyHoursWorked * this.hourlyWage);
+        this.biweeklyHoursWorked = 0.0;
 
     }
+
+    public Double getAmountPaid() {
+        return this.biweeklyHoursWorked * this.hourlyWage;
+    }
+
+    public String toString() {
+        return "TEAM MEMBER: \n" + getFirstName() + " " + getLastName() +"\nEmployee Number: " + getEmployeeNumber() + "\nAmount Earned to date: " + getAmountEarnedTD();
+    }
+
+   
 
 
 

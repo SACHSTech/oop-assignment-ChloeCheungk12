@@ -3,8 +3,8 @@ package FastFood;
 public class Supervisor extends Employee {
     private Double salary;
 
-    public Supervisor(String fname, String lname, String emailAddr, int phonenum, int EmployeeNum, Double thesalary) {
-        super(fname, lname, emailAddr, phonenum, EmployeeNum);
+    public Supervisor(String fname, String lname, String emailAddr, String phoneNum, int EmployeeNum, Double thesalary) {
+        super(fname, lname, emailAddr, phoneNum, EmployeeNum);
         this.salary = thesalary;
 
 
@@ -15,19 +15,26 @@ public class Supervisor extends Employee {
         return salary;
     }
 
-    public String setSalary(Double newSalary) {
+    public void setSalary(Double newSalary) {
         if (newSalary > 31000.0) {
             salary = newSalary;
-            return ("New salary set to: $" + salary);
+            System.out.println("New salary set to: $" + salary);
         }
         else {
-            return ("New salary too low. Salary remains as: $" + salary );
+            System.out.println("New salary too low. Salary remains as: $" + salary );
         }
     }
 
-    public void collectPaycheque(boolean isPayDay) {
-        if (isPayDay == true) {
-            setAmountEarnedTD(salary);
-        }
+    public void collectPaycheque() {
+        setAmountEarnedTD(salary);
+
+    }
+
+    public Double getAmountPaid() {
+        return salary;
+    }
+
+    public String toString() {
+        return "SUPERVISOR: \n" + getFirstName() + " " + getLastName() +"\nEmployee Number: " + getEmployeeNumber() + "\nAmount Earned to date: " + getAmountEarnedTD();
     }
 }

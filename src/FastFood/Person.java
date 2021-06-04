@@ -3,10 +3,10 @@ public abstract class Person {
     private String firstName;
     private String lastName;
     private String email; 
-    private int phoneNumber;
+    private String phoneNumber;
     private Double amountEarnedTD;
 
-    public Person(String fname, String lname, String emailAddr, int phonenum) {
+    public Person(String fname, String lname, String emailAddr, String phonenum) {
         firstName = fname;
         lastName = lname;
         email = emailAddr;
@@ -24,7 +24,7 @@ public abstract class Person {
     public String getEmail() {
         return email;
     }
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -36,5 +36,11 @@ public abstract class Person {
         amountEarnedTD += amountEarned;
     }
 
-    public abstract void collectPaycheque(boolean isPayDay);
+    
+
+
+    public abstract void collectPaycheque();
+    public abstract Double getAmountPaid();
+
+
 }

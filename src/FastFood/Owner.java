@@ -6,7 +6,7 @@ public class Owner extends Person{
     private Double salary;
 
     // Constructor
-    public Owner(String fname, String lname, String emailAddr, int phonenum, Double thesalary) {
+    public Owner(String fname, String lname, String emailAddr, String phonenum, Double thesalary) {
         super (fname, lname, emailAddr, phonenum);
         this.salary = thesalary;
     }
@@ -17,15 +17,19 @@ public class Owner extends Person{
         return salary;
     }
 
-    public void collectPaycheque(boolean isPayDay) {
-        if (isPayDay == true) {
-            setAmountEarnedTD(salary);
-        }
+    public void collectPaycheque() {
+        setAmountEarnedTD(salary);
+    }
+
+    public Double getAmountPaid() {
+        return salary;
     }
 
     public String toString() {
         return "Owner: " + this.getFirstName() + " " + this.getLastName();
     }
+
+    
 
 
     
